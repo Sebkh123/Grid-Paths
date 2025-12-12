@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Paths</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        #board {
+            border-collapse: collapse;
+            margin: 20px 0;
+            border: 3px solid black;   
+            box-sizing: border-box; 
+        }
+
+
+        #board {
+        display: grid;
+        grid-template-columns: repeat(12, 40px);
+        grid-template-rows: repeat(5, 40px);
+        }
+
+        .wall {
+            background-color: black;
+        }
+        .start {
+            background-color: #e6f7ff;
+        }
+        .end {
+            background-color: #e6ffe6;
+        }
+        .highlighted {
+            background-color: #ffff99;
+            font-size: 1.2em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+
+       .cell.active {
+        outline: 2px solid orange;
+        transform: scale(1.1);
+        z-index: 10;
+        transition: 100s;
+        }   
+
+    </style>
+</head>
+<body>
+    <h1>Grid Paths</h1>
+    
+  <div id="board" class="board"></div>
+    <button id="calculateButton">Solve board</button>
+    
+    <script src="gridpath.js"></script>
+</body>
+</html>
